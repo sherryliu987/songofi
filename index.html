@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song of I</title>
+    <style>
+        html,body{
+            margin:0;
+            height:100%;
+        }
+        img{
+            display:block;
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+        h1{
+            position:absolute;
+            top: 40%;
+            left: 40%;
+            z-index:10;
+            color:white;
+            font-size: 70px;
+            font-family: 'Courier New', monospace;
+        }
+        button{
+            position:absolute;
+            top: 90%;
+            left: 45%;
+            z-index:10;
+            background-color: #ded4ce; /* Green */
+            border: none;
+            color: #464f40;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Courier New', monospace;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<img src="back.png" id="background">
+
+<div>
+    <h1 id="word" ></h1>
+</div>
+
+<a href="about.html">
+    <button>About</button>
+</a>
+
+</body>
+
+<script>
+    const mess = document.getElementById("word");
+
+    let words = {"0":"celebrate","1":"assume","2":"loafe","3":"lean","4":"harbor","5":"permit","6":"breathe","7":"shall","8":"am","9":"will","10":"am","11":"have","12":"do","13":"and","14":"am","15":"am","16":"postpone","17":"meet","18":"live","19":"love","20":"am","21":"see","22":"sweated","23":"have","24":"witness","25":"believe","26":"am","27":"want","28":"like","29":"mind","30":"know","31":"know","32":"answer","33":"do","34":"guess","35":"guess","36":"guess","37":"guess","38":"give","39":"receive","40":"use","41":"had","42":"would","43":"perceive","44":"perceive","45":"wish","46":"could","47":"hasten","48":"know","49":"pass","50":"am","51":"am","52":"know","53":"see","54":"lift","55":"peeringly","56":"witness","57":"note","58":"mind","59":"depart","60":"am","61":"help","62":"came","63":"felt","64":"jump","65":"hunt","66":"bend","67":"tuckd","68":"saw","69":"heard","70":"saw","71":"had","72":"see","73":"loiter","74":"follow","75":"behold","76":"do","77":"go","78":"have","79":"believe","80":"listening","81":"see","82":"can","83":"am","84":"can","85":"do","86":"do","87":"tend","88":"am","89":"weave","90":"am","91":"live","92":"resist","93":"see","94":"cannot","95":"come","96":"play","97":"play","98":"also","99":"beat","100":"blow","101":"make","102":"will","103":"have","104":"have","105":"would","106":"astonish","107":"tell","108":"might","109":"will","110":"extract","111":"eat","112":"mark","113":"do","114":"wear","115":"please","116":"pray","117":"venerate","118":"find","119":"see","120":"say","121":"say","122":"know","123":"am","124":"must","125":"know","126":"am","127":"know","128":"know","129":"shall","130":"know","131":"am","132":"do","133":"see","134":"behave","135":"plant","136":"exist","137":"am","138":"sit","139":"sit","140":"come","141":"can","142":"can","143":"laugh","144":"know","145":"am","146":"am","147":"graft","148":"translate","149":"am","150":"say","151":"say","152":"chant","153":"show","154":"am","155":"call","156":"to","157":"hold","158":"resign","159":"behold","160":"believe","161":"undress","162":"can","163":"am","164":"too","165":"am","166":"make","167":"am","168":"do","169":"stand","170":"moisten","171":"find","172":"accept","173":"accept","174":"but","175":"speak","176":"give","177":"will","178":"remove","179":"do","180":"keep","181":"believe","182":"inside","183":"make","184":"touch","185":"worship","186":"have","187":"have","188":"have","189":"dote","190":"cannot","191":"emit","192":"take","193":"walk","194":"pause","195":"cannot","196":"could","197":"encompass","198":"will","199":"underlying","200":"refuse","201":"refuse","202":"really","203":"crowd","204":"carry","205":"wholly","206":"will","207":"hear","208":"hear","209":"hear","210":"love","211":"hear","212":"hear","213":"hear","214":"hear","215":"hear","216":"did","217":"possessd","218":"dab","219":"am","220":"lose","221":"have","222":"pass","223":"merely","224":"can","225":"am","226":"talk","227":"have","228":"and","229":"went","230":"believe","231":"believe","232":"find","233":"incorporate","234":"desire","235":"follow","236":"ascend","237":"think","238":"could","239":"stand","240":"accept","241":"wonder","242":"pass","243":"love","244":"but","245":"resign","246":"need","247":"myself","248":"stand","249":"see","250":"guessd","251":"guessd","252":"loafd","253":"guessd","254":"lay","255":"walkd","256":"skirt","257":"am","258":"find","259":"in","260":"hate","261":"tread","262":"visit","263":"fly","264":"help","265":"anchor","266":"go","267":"ascend","268":"take","269":"stretch","270":"pass","271":"fling","272":"am","273":"bivouac","274":"turn","275":"tighten","276":"understand","277":"swallow","278":"like","279":"am","280":"sufferd","281":"was","282":"feel","283":"am","284":"wince","285":"clutch","286":"fall","287":"do","288":"myself","289":"lean","290":"am","291":"inspired","292":"heard","293":"heard","294":"lie","295":"lie","296":"am","297":"am","298":"tell","299":"am","300":"take","301":"see","302":"tell","303":"knew","304":"tell","305":"laugh","306":"hear","307":"am","308":"let","309":"am","310":"go","311":"also","312":"am","313":"project","314":"have","315":"discover","316":"could","317":"could","318":"could","319":"remember","320":"resume","321":"troop","322":"salute","323":"need","324":"force","325":"might","326":"like","327":"have","328":"do","329":"give","330":"give","331":"blow","332":"am","333":"compel","334":"have","335":"have","336":"bestow","337":"do","338":"will","339":"lean","340":"put","341":"swear","342":"never","343":"start","344":"am","345":"speed","346":"seize","347":"dilate","348":"buoy","349":"fill","350":"have","351":"tell","352":"am","353":"bring","354":"heard","355":"see","356":"shall","357":"am","358":"am","359":"acknowledge","360":"do","361":"know","362":"do","363":"shall","364":"turn","365":"know","366":"know","367":"take","368":"do","369":"know","370":"strip","371":"launch","372":"do","373":"am","374":"keep","375":"to","376":"am","377":"an","378":"mount","379":"see","380":"know","381":"was","382":"waited","383":"was","384":"was","385":"stand","386":"open","387":"see","388":"can","389":"come","390":"pine","391":"know","392":"have","393":"tramp","394":"have","395":"lead","396":"lead","397":"will","398":"ascended","399":"said","400":"hear","401":"answer","402":"cannot","403":"kiss","404":"wash","405":"will","406":"am","407":"love","408":"teach","409":"follow","410":"do","411":"wait","412":"act","413":"swear","414":"will","415":"swear","416":"will","417":"go","418":"do","419":"have","420":"have","421":"have","422":"or","423":"say","424":"say","425":"who","426":"am","427":"hear","428":"understand","429":"wish","430":"see","431":"see","432":"find","433":"leave","434":"know","435":"go","436":"see","437":"recline","438":"think","439":"smell","440":"reach","441":"reach","442":"reckon","443":"have","444":"hear","445":"say","446":"ascend","447":"ascend","448":"perceive","449":"know","450":"sleepI","451":"do","452":"swing","453":"might","454":"plead","455":"snuff","456":"stay","457":"contradict","458":"contradict","459":"contain","460":"concentrate","461":"wait","462":"am","463":"too","464":"too","465":"sound","466":"depart","467":"shake","468":"effuse","469":"bequeath","470":"love","471":"am","472":"mean","473":"shall","474":"stop"}
+
+    function setWord() {
+        let i = Math.floor(Math.random() * 474);
+        mess.innerHTML = "I " + words[i];
+    }
+
+    myVar = setTimeout(setInterval("setWord()", 1500));
+
+</script>
+
+</html>

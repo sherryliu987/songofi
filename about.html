@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <style>
+        body{
+            padding-left:10%;
+            padding-right:10%;
+            padding-top:5%;
+            padding-bottom:5%;
+            font-family: 'Courier New', monospace;
+            background-color: #ded4ce;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Maker’s Statement</h1>
+
+<p>Me. Myself. I. These words capture the essential individuality at the center of each of our lives. They also
+     underlie key themes in Walt Whitman’s groundbreaking poem “Song of Myself”. In fact, the word “I” alone appears 475 times. However, Whitman doesn’t just consider the self alone, but in the context of other actions, objects, and concepts. In that spirit, it’s the words after “I” that take the center stage in this visualization.
+</p>
+<p>
+In this visualization, I attempt to characterize Whitman’s concept of the self by displaying the words that follow
+    the word “I” on a website. To do this, I computationally analyzed the entire text of “Song of Myself” using a
+    <a href="https://colab.research.google.com/drive/17O8o67GgdaQV9WYbTEKJdZfoBPg_GZlC?usp=sharing">Python Script</a>
+    to extract the 2-grams that begin with I. I then exported the words into a json file and
+    coded a
+    website to display a new randomly chosen word every 1.5 seconds. In total, there are 216 unique words following “I”. Some are expected - “am” appears 47 times, with “have” and “do” following at 21 and 19. Throughout the most frequent words, you can see Whitman’s association of the self with sensations and emotions, with “hear”, “believe”, “love”, and “stand” appearing at the top. Others are startling, such as “anchor”, “venerate”, and “graft”.
+</p>
+<p>
+Yet to truly appreciate the weight of these words is to take them beyond the statistics. I was inspired by Data
+    Feminism, which describes how it can be helpful to <i>“experience each datapoint one at a time and only slowly
+    construct a sense of the whole”. </i> By displaying the words one at a time, the viewer is able to digest each one,
+                                         leveraging the “affect” of Whitman’s bold words.  I also designed a whimsical background to set an accepting tone, as the elements layer onto each other as various dimensions of the self do in the poem.
+</p>
+<p>
+Further, the randomness of each word creates a custom experience for each viewer, appealing to their innate curiosity and empowering them to find their own patterns and meaning. The randomness can also be seen as a “God Trick” effect, as the reader has no agency in what word comes next. The space around the words attempts to incorporate the uncertainty of language without context, emphasizing that these two words only capture a fraction of the text.
+</p>
+<p>
+    The format of the website gears the visualization toward a modern audience, showing them the words that Whitman
+    associates with the titular self in a dynamic fashion. My ultimate goal is to have the reader consider what
+    concepts they associate with their own selves, whether those words resonate deeply or are a work in progress. You, too, have words associated with your very own “I”. This is the positionality that Whitman urges readers to consider and what I want to highlight in this visualization. </p>
+Sources:
+<ul>
+<li><a href=https://data-feminism.mitpress.mit.edu/pub/5evfe9yd/release/5>https://data-feminism.mitpress.mit.edu/pub/5evfe9yd/release/5</a></li>
+    <li><a href="http://chemistry.ncssm.edu/digihum/data/text/SongOfMyselfWhitman.txt">http://chemistry.ncssm
+        .edu/digihum/data/text/SongOfMyselfWhitman.txt</a></li>
+</ul>
+</body>
+</html>
